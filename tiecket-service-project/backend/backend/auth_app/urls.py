@@ -1,13 +1,14 @@
 from django.urls import path
 
-from backend.auth_app.views import UserLoginView, UserCreateView, UserDetailsView, EditProfileView, \
-    ChangeUserPasswordView, UserLogoutView
+from backend.auth_app.views import UserLoginView, UserCreateView, UserLogoutView, ProfilesListView, \
+    ProfileDetailsAndUpdateView
 
 urlpatterns = (
     path('login/', UserLoginView.as_view(), name='login user'),
     path('register/', UserCreateView.as_view(), name='request user'),
-    # path('logout/', UserLogoutView.as_view(), name='logout user'),
-    # path('profile/<int:pk>/', UserDetailsView.as_view(), name='profile'),
+    path('logout/', UserLogoutView.as_view(), name='logout user'),
+    path('profile/', ProfilesListView.as_view(), name='profiles list'),
+    path('profile/<int:pk>/', ProfileDetailsAndUpdateView.as_view(), name='profile details and update'),
     # path('profile/edit/<int:pk>/', EditProfileView.as_view(), name='edit profile'),
     # path('edit-password/', ChangeUserPasswordView.as_view(), name='change password'),
 )

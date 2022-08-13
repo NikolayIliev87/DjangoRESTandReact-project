@@ -1,8 +1,9 @@
 from django.core import exceptions
 from rest_framework import generics as api_views, permissions
 
-from backend.web.models import Ticket, Category
-from backend.web.serializers import TicketSerializer, CategorySerializer, TicketForCreateAndDetailsSerializer
+from backend.web.models import Ticket, Category, Comment
+from backend.web.serializers import TicketSerializer, CategorySerializer, TicketForCreateAndDetailsSerializer, \
+    CommentsListAndCreateSerializer
 
 
 class TicketListAndCreateView(api_views.ListCreateAPIView):
@@ -41,18 +42,34 @@ class TicketListAndCreateView(api_views.ListCreateAPIView):
         return queryset
 
 
-class TicketDetailsAndUpdateView(api_views.RetrieveUpdateAPIView):
+class TicketDetailsAndUpdateView(api_views.RetrieveUpdateDestroyAPIView):
     queryset = Ticket.objects.all()
     permission_classes = (
         permissions.IsAuthenticated,
     )
     serializer_class = TicketForCreateAndDetailsSerializer
 
-    def get_object(self):
-        the_object = super().get_object()
-        if the_object.user != self.request.user:
-            raise exceptions.PermissionDenied
-        return object
+    # def get_object(self):
+    #     the_object = super().get_object()
+    #     if the_object.user != self.request.user:
+    #         raise exceptions.PermissionDenied
+    #     return object
+
+
+class CommentsListAndCreateView(api_views.ListCreateAPIView):
+    queryset = Comment.objects.all()
+    permission_classes = (
+        permissions.IsAuthenticated,
+    )
+    serializer_class = CommentsListAndCreateSerializer
+
+
+# class TicketCommentsListView(api_views.ListCreateAPIView):
+#     queryset = Comment.objects.all()
+#     permission_classes = (
+#         permissions.IsAuthenticated,
+#     )
+#     serializer_class = CommentSerializer
 
 
 class CategoryListView(api_views.ListAPIView):
@@ -68,6 +85,5 @@ class CategoryListView(api_views.ListAPIView):
     #     queryset = queryset.filter(ticket__user=self.request.user)
     #
     #     return queryset
-from django.shortcuts import render
 
 # Create your views here.

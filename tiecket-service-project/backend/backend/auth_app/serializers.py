@@ -9,9 +9,10 @@ UserModel = get_user_model()
 
 
 class ProfileSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Profile
-        fields = ('first_name', 'last_name', 'phone', 'photo_url')
+        fields = ('full_name', 'first_name', 'last_name', 'phone', 'photo_url', 'user')
 
 
 class UserCreateSerializer(serializers.ModelSerializer):
@@ -61,3 +62,15 @@ class UserCreateSerializer(serializers.ModelSerializer):
         result = super().to_representation(instance)
         result.pop('password')
         return result
+
+
+class ProfileForUpdateAndDetailsSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Profile
+        fields = ('first_name', 'last_name', 'phone', 'photo_url', 'user', 'is_deleted')
+
+    # add user in validate data ( even if it's not in meta-fields ( for creation of new ticket with user)
+    def create(self, validated_data):
+        validated_data['user'] = self.context['request'].user
+        return super().create(validated_data)

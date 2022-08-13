@@ -1,5 +1,8 @@
 from django.contrib.auth.models import BaseUserManager
 from django.contrib.auth.hashers import make_password
+from rest_framework.authtoken import views as auth_views
+from rest_framework.authtoken.models import Token
+from rest_framework.response import Response
 
 
 class TicketServiceUserManager(BaseUserManager):
@@ -27,3 +30,10 @@ class TicketServiceUserManager(BaseUserManager):
             raise ValueError('Superuser must have is_superuser=True.')
 
         return self._create_user(email, password, **extra_fields)
+
+
+class CustomObtainAuthToken(auth_views.ObtainAuthToken):
+    def post(self, request, *args, **kwargs):
+        response = super(CustomObtainAuthToken, self).post(request, *args, **kwargs)
+        token = Token.objects.get(key=response.data['token'])
+        return Response({'token': token.key, 'id': token.user_id, 'email': str(token.user)})

@@ -22,7 +22,6 @@ class Category(models.Model):
         return self.name
 
 
-
 class Ticket(models.Model):
     TICKET_NAME_MAX_LENGTH = 100
     DESCRIPTION_NAME_MAX_LENGTH = 500
@@ -61,6 +60,7 @@ class Ticket(models.Model):
     ticket_id = models.CharField(
         max_length=TICKET_ID_MAX_LENGTH,
         blank=True,
+        null=True,
     )
 
     status = models.BooleanField(
@@ -77,3 +77,18 @@ class Ticket(models.Model):
         super(Ticket, self).save(*args, **kwargs)
 
 
+class Comment(models.Model):
+    description = models.TextField(
+        null=False,
+        blank=False,
+    )
+
+    user = models.ForeignKey(
+        UserModel,
+        on_delete=models.CASCADE,
+    )
+
+    ticket_id = models.ForeignKey(
+        Ticket,
+        on_delete=models.CASCADE,
+    )
