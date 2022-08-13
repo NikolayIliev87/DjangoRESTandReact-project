@@ -153,9 +153,10 @@
 .TicketDetails {
     width: 60vw;
     min-height: 75%;
+    max-height: 88%;
     position: absolute;
     margin-left: 20vw;
-    margin-top: 10vh;
+    margin-top: 1vh;
     display: flex;
     flex-direction: column;
     background-color: lightgray;
@@ -255,14 +256,24 @@
 
 .TicketCommnets {
     display: flex;
-    width: 70%;
+    width: 100%;
     flex-direction: column;
     justify-content: right;
+    text-overflow: ellipsis;
+    overflow-y: auto;
+    min-height: 90%;
+    max-height: 100%;
 }
 
 .TicketCommnets article {
     display: flex;
     column-gap: 10px;
+}
+
+.TicketCommnets span {
+    width: 100%;
+    border: 1px;
+    border-style:groove;
 }
 
 .TicketCommnets article h2 {
@@ -282,6 +293,7 @@
     margin-top: 15px;
     font-size: 20px;
     width: 180px;
+    margin-bottom: 5px;
 }
 
 .TicketCommnets button:hover {
