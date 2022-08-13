@@ -93,7 +93,7 @@ export const TicketList = () => {
                 <h1>Your Tickets List</h1>
                 <button onClick={newTicketHandler}> CREATE NEW TICKET</button>
                 {tickets.map(ticket => 
-                    <article  key={ticket.id}>
+                    <article className={ticket.status?styles.CompletedTicket:''} key={ticket.id}>
                         <Ticket {...ticket} onDetailsClick={onTicketDetailsHandler} />
                     </article>
                 )}

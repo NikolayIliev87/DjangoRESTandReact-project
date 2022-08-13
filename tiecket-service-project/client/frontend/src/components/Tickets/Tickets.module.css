@@ -35,6 +35,10 @@
     padding: 5px 0px 5px 0px;
 }
 
+.TicketsList .CompletedTicket {
+    background-color: rgb(26, 86, 46);
+}
+
 .TicketsList article {
     display: flex;
     width: 90vw;
