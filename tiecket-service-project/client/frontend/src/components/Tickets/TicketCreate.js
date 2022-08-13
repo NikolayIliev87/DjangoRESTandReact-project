@@ -43,10 +43,6 @@ export const TicketCreate = (props) => {
                     <label htmlFor="title">Title:</label>
                     <input id='title' type="text"  onChange={changeHandler} value={values.title}/>
                 </div>
-                {/* <div>
-                    <label htmlFor="category">Category:</label>
-                    <input id='category' type="text" readOnly value={values.category}/>
-                </div> */}
                 <div>
                     <label htmlFor="category">Category:</label>
                     <select id='category' value={categoryDefauls} onChange={onCategoryChangeHandler}>
