@@ -150,12 +150,9 @@ export const TicketDetails = (props) => {
                     <h2>Comments:</h2> 
                     <>
                         {comments.map(comment => 
-                            <>
                             <article key={comment.id}>
                                 <Comment {...comment} />
                             </article>
-                            <span></span>
-                            </>
                         )}
                     </>
                     <button onClick={onCommentsHideClick}>Hide Comments</button>
