@@ -1,0 +1,52 @@
+.Home {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 15vh;
+}
+
+.Home h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 42px;
+}
+
+.Home h2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.Home li {
+    list-style: none;
+    margin: 0px 10px 0px 10px;
+    border: 1px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 25px;
+    padding: 0px 15px 0px 15px;
+}
+
+.Home li:hover {
+    border-color: darkgray;
+    border-radius: 25px;
+    padding: 0px 15px 0px 15px;
+    background-color: #00d394;
+}
+
+.Home li a {
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+.Home li a:hover {
+    cursor: pointer;
+    background-color: #00d394;
+    color: black;
+}
+

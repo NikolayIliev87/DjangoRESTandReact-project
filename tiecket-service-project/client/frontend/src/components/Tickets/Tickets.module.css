@@ -1,0 +1,326 @@
+/* Tickets List CSS */
+.TicketsList {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.TicketsList button {
+    width: 25%;
+    background-color: rgb(202, 183, 15);
+    border: 1px;
+    border-radius: 10px;
+    padding: 5px 15px 5px 15px;
+    color: white;
+    margin: 10px 5px 10px 5px;
+    font-size: 20px;
+}
+
+.TicketsList button:hover {
+    cursor: pointer;
+    background-color: rgb(189, 106, 6);
+}
+
+.TicketsList h1 {
+    width: 90vw;
+    text-align: center;
+    background-color: #13523f;
+    border: 1px;
+    border-style: solid;
+    border-color: #13523f;
+    color: white;
+    padding: 5px 0px 5px 0px;
+}
+
+.TicketsList article {
+    display: flex;
+    width: 90vw;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    background-color: rgb(137, 135, 135);
+}
+
+.TicketsList article h2 {
+    margin-left: 15px;
+    width: 70%;
+    font-size: 22px;
+}
+
+.TicketsList article p {
+    width: 20%;
+}
+
+.TicketsList article button {
+    margin-right: 15px;
+    width: 10%;
+    background-color: rgb(137, 135, 135);
+    border: 1px;
+    border-radius: 10px;
+    padding: 0px 15px 2px 15px;
+    color: white;
+    margin: 10px 5px 10px 5px;
+    font-size: 20px;
+}
+
+.TicketsList article button:hover {
+    cursor: pointer;
+    background-color: #00d394;
+}
+
+/* Ticket CREATE NEW CSS*/
+
+.TicketNew {
+    width: 60vw;
+    height: 50vh;
+    position: absolute;
+    margin-left: 20vw;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    align-items: center;
+}
+
+.TicketNew h1 {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(189, 106, 6);
+    border: 1px;
+    border-style: solid;
+    border-color: rgb(189, 106, 6);
+    color: white;
+    padding: 5px 0px 5px 0px;
+    margin-bottom: 50px;
+}
+
+.TicketNew section {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.TicketNew section div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.TicketNew section div:last-child {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.TicketNew section div label {
+    width: 20%;
+}
+
+.TicketNew section div input {
+    width: 75%;
+}
+
+.TicketNew section div select {
+    width: 75%;
+}
+
+.TicketNew section div button {
+    background-color: rgb(137, 135, 135);
+    border: 1px;
+    border-radius: 10px;
+    padding: 0px 15px 2px 15px;
+    color: white;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.TicketNew section div button:hover {
+    cursor: pointer;
+    background-color: #00d394;
+}
+
+/* Ticket Details CSS*/
+.TicketDetails {
+    width: 60vw;
+    min-height: 75%;
+    position: absolute;
+    margin-left: 20vw;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    align-items: center;
+}
+
+.TicketDetails h1 {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(189, 106, 6);
+    border: 1px;
+    border-style: solid;
+    border-color: rgb(189, 106, 6);
+    color: white;
+    padding: 5px 0px 5px 0px;
+    margin-bottom: 50px;
+}
+
+.TicketDetails section {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.TicketDetails section div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.TicketDetails section div:last-child {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.TicketDetails section div label {
+    width: 30%;
+}
+
+.TicketDetails section div input {
+    width: 70%;
+}
+
+.TicketDetails section div select {
+    width: 70%;
+}
+
+.TicketDetails section div button {
+    background-color: rgb(137, 135, 135);
+    border: 1px;
+    border-radius: 10px;
+    padding: 0px 15px 2px 15px;
+    color: white;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.TicketDetails section div button:hover {
+    cursor: pointer;
+    background-color: #00d394;
+}
+
+/* Ticket Comments */
+
+.TicketCommnetsOverview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 15px;
+}
+
+.TicketCommnetsOverview div {
+    display: flex;
+    column-gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.TicketCommnetsOverview button {
+    background-color: rgb(137, 135, 135);
+    border: 1px;
+    border-radius: 10px;
+    padding: 0px 15px 2px 15px;
+    color: white;
+    margin-bottom: 15px;
+    font-size: 20px;
+    width: 180px;
+}
+
+.TicketCommnetsOverview button:hover {
+    cursor: pointer;
+    background-color: #00d394;
+}
+
+.TicketCommnets {
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    justify-content: right;
+}
+
+.TicketCommnets article {
+    display: flex;
+    column-gap: 10px;
+}
+
+.TicketCommnets article h2 {
+    font-size: 20px;
+}
+
+.TicketCommnets article h2:nth-child(2) {
+    font-style: italic;
+}
+
+.TicketCommnets button {
+    background-color: rgb(137, 135, 135);
+    border: 1px;
+    border-radius: 10px;
+    padding: 0px 15px 2px 15px;
+    color: white;
+    margin-top: 15px;
+    font-size: 20px;
+    width: 180px;
+}
+
+.TicketCommnets button:hover {
+    cursor: pointer;
+    background-color: #00d394;
+}
+
+.TicketCommnetCreate {
+    width: 40vw;
+    height: 20%;
+    position: absolute;
+    margin-left: 30vw;
+    margin-top: 60vh;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.TicketCommnetCreate h2 {
+    width: 100%;
+    text-align: center;
+    background-color: #00d394;
+    border: 1px;
+    border-style: solid;
+    border-color: #00d394;
+    color: white;
+    padding: 5px 0px 5px 0px;
+}
+
+.TicketCommnetCreate button {
+    background-color: rgb(137, 135, 135);
+    border: 1px;
+    border-radius: 10px;
+    padding: 0px 15px 2px 15px;
+    color: white;
+    margin-bottom: 15px;
+    font-size: 20px;
+    width: 100px;
+}
+
+.TicketCommnetCreate button:hover {
+    cursor: pointer;
+    background-color: #00d394;
+}

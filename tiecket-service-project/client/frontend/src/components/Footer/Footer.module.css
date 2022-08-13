@@ -1,0 +1,14 @@
+.Footer {
+    background-color: #00d394;
+    width: 100vw;
+    height: 5vh;
+}
+
+.Footer p {
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    align-items: center;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
