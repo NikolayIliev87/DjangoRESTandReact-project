@@ -16,7 +16,10 @@ export const Navigation = () => {
                 {auth.id
                     ?
                     <ul>
+                        {auth.is_staff || auth._is_superuser?
                         <li><Link to="/profileslist">Profiles List</Link></li>
+                        : ""
+                        }
                         <li><Link to="/profile">Profile</Link></li>
                         <li><Link to="/ticketlist">Your Tickets</Link></li>
                         <li><Link to="/logout">Logout</Link></li>
