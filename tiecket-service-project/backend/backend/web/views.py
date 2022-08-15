@@ -49,11 +49,11 @@ class TicketDetailsAndUpdateView(api_views.RetrieveUpdateDestroyAPIView):
     )
     serializer_class = TicketForCreateAndDetailsSerializer
 
-    # def get_object(self):
-    #     the_object = super().get_object()
-    #     if the_object.user != self.request.user:
-    #         raise exceptions.PermissionDenied
-    #     return object
+    def get_object(self):
+        the_object = super().get_object()
+        if the_object.user != self.request.user:
+            raise exceptions.PermissionDenied
+        return the_object
 
 
 class CommentsListAndCreateView(api_views.ListCreateAPIView):
@@ -84,6 +84,6 @@ class CategoryListView(api_views.ListAPIView):
     #     queryset = super().get_queryset()
     #     queryset = queryset.filter(ticket__user=self.request.user)
     #
-    #     return queryset
+    #     return set(queryset)
 
 # Create your views here.

@@ -1,3 +1,5 @@
+import styles from './App.module.css'
+
 import {Routes, Route} from 'react-router-dom';
 import { useState, useEffect } from "react";
 
@@ -34,7 +36,7 @@ function App() {
   useEffect(() => {if(auth.id) {
     ticketService.getAllTickets()
         .then(tickets => setTickets(tickets))}
-  },[auth.id, tickets.length]);
+  },[auth.id]);
 
   const [yourprofile, setYourProfile] = useState([]);
 
@@ -46,7 +48,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className={styles.AppMain}>
       <AuthContext.Provider value={{auth, userLogin}}>
         <TicketsContext.Provider value={{tickets, setTickets}}>
           <ProfileContext.Provider value={{yourprofile, setYourProfile}}>

@@ -30,6 +30,11 @@
     list-style: none;
 }
 
+.Navigation li i {
+    color: white;
+    margin-right: 5px;
+}
+
 .Navigation a {
     list-style: none;
     text-decoration: none;

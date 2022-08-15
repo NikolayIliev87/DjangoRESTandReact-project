@@ -81,9 +81,9 @@ class ProfileDetailsAndUpdateView(api_generic_views.RetrieveUpdateAPIView):
 
     serializer_class = ProfileForUpdateAndDetailsSerializer
 
-    # def get_object(self):
-    #     the_object = super().get_object()
-    #     if the_object.user != self.request.user:
-    #         raise exceptions.PermissionDenied
-    #     return object
+    def get_object(self):
+        the_object = super().get_object()
+        if the_object.user != self.request.user:
+            raise exceptions.PermissionDenied
+        return the_object
 

@@ -9,6 +9,8 @@ const localserver = 'http://127.0.0.1:8000/api/tickets'
 // }
 
 export const getAllTickets = () => request.get(localserver)
+
+export const getAllTicketsFiltered = (filterID) => request.get(`${localserver}/?category=${filterID}`)
     // const token_id = JSON.parse(sessionStorage.getItem('userData'))['token']
     // const response = await fetch(localserver, {
     //     method: 'GET',

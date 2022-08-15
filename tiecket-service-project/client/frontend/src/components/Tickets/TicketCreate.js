@@ -4,11 +4,12 @@ import { useState } from "react";
 
 export const TicketCreate = (props) => {
     const user = JSON.parse(localStorage.getItem('auth'))['id']
+    // const [categoryDefauls, setcategoryDefauls] = useState(props.allCategories[0].id)
     const [values, setValues] = useState({
         title: '',
         description: '',
         user: user,
-        category: '',
+        category: `${props.allCategories[0].id}`,
         ticket_id: '',    
     })
 
@@ -19,13 +20,12 @@ export const TicketCreate = (props) => {
         }))
     };
 
-    const [categoryDefauls, setcategoryDefauls] = useState(props.category)
     const onCategoryChangeHandler = (ev) => {
         setValues (state => ({
             ...state,
             [ev.target.id]: ev.target.value
         }))
-        setcategoryDefauls(categoryDefauls => ev.target.value)
+        // setcategoryDefauls(categoryDefauls => ev.target.value)
     }
 
     const onSubmitHandler = (ev) => {
@@ -45,7 +45,7 @@ export const TicketCreate = (props) => {
                 </div>
                 <div>
                     <label htmlFor="category">Category:</label>
-                    <select id='category' value={categoryDefauls} onChange={onCategoryChangeHandler}>
+                    <select id='category' value={values.category} onChange={onCategoryChangeHandler}>
                         {props.allCategories.map(category => 
                             <option value={category.id} key={category.id}>
                                 {category.name}

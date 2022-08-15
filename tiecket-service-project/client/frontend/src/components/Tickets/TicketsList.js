@@ -1,6 +1,6 @@
 import styles from './Tickets.module.css'
 
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 
 import { Ticket } from "./Ticket";
 import { TicketDetails } from "./TicketDetails";
@@ -9,10 +9,16 @@ import { TicketCreate } from "./TicketCreate";
 import * as ticketService from '../../services/tickets_services'
 
 import { TicketsContext } from "../../contexts/TicketsContext";
+import { Filter } from './Filter';
 
 
 export const TicketList = () => {
     const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        ticketService.getAllCategories()
+            .then(categories => {setCategories(categories)})
+      },[]);
 
     const {tickets, setTickets} = useContext(TicketsContext)
 
@@ -21,8 +27,8 @@ export const TicketList = () => {
     const onTicketDetailsHandler = (ticketID) => {
         ticketService.getTicket(ticketID)
             .then(ticket => {setSelectedTicket(ticket)})
-        ticketService.getAllCategories()
-            .then(categories => {setCategories(categories)})
+        // ticketService.getAllCategories()
+        //     .then(categories => {setCategories(categories)})
     };
 
     const [newTicket, setNewTicket] = useState(null);
@@ -30,8 +36,8 @@ export const TicketList = () => {
     const newTicketHandler = (ev) => {
         ev.preventDefault()
         setNewTicket(true)
-        ticketService.getAllCategories()
-            .then(categories => {setCategories(categories)})
+        // ticketService.getAllCategories()
+        //     .then(categories => {setCategories(categories)})
     }
 
     const onCloseDetailsHandler = () => {
@@ -74,6 +80,21 @@ export const TicketList = () => {
             )
     };
 
+    const onFilterHandler = (filterID) => {
+        if (filterID!=='All') {
+            ticketService.getAllTicketsFiltered(filterID)
+                    .then(
+                        tickets => setTickets(tickets)
+                    )
+        }
+        else {
+            ticketService.getAllTickets()
+                    .then(
+                        tickets => setTickets(tickets)
+                    )
+        }
+    }
+
     return (
         <div>
             <>
@@ -91,12 +112,20 @@ export const TicketList = () => {
             </>
             <div className={styles.TicketsList}>
                 <h1>Your Tickets List</h1>
-                <button onClick={newTicketHandler}> CREATE NEW TICKET</button>
-                {tickets.map(ticket => 
+                <button className={styles.CreateNewTicket} onClick={newTicketHandler}> CREATE NEW TICKET</button>
+                    <Filter categoryList={categories} onFilter={onFilterHandler} />
+                <div className={styles.TicketsArray}>
+                {tickets.length>0
+                ?
+                tickets.map(ticket => 
                     <article className={ticket.status?styles.CompletedTicket:''} key={ticket.id}>
                         <Ticket {...ticket} onDetailsClick={onTicketDetailsHandler} />
                     </article>
-                )}
+                )
+                :
+                <p>No Tickets to show!</p>
+                }
+                </div>
             </div>
         </div>
     );

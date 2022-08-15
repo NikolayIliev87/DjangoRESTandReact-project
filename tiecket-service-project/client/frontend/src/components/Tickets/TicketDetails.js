@@ -35,13 +35,13 @@ export const TicketDetails = (props) => {
         setSwitchStatus(switchStatus => !switchStatus)
     }
 
-    const [categoryDefauls, setcategoryDefauls] = useState(props.category)
+    // const [categoryDefauls, setcategoryDefauls] = useState(props.category)
     const onCategoryChangeHandler = (ev) => {
         setValues (state => ({
             ...state,
             [ev.target.id]: ev.target.value
         }))
-        setcategoryDefauls(categoryDefauls => ev.target.value)
+        // setcategoryDefauls(categoryDefauls => ev.target.value)
     }
 
     const onSubmitHandler = (ev) => {
@@ -121,7 +121,7 @@ export const TicketDetails = (props) => {
                     </div> 
                     <div>
                         <label htmlFor="category">Category:</label>
-                        <select id='category' value={categoryDefauls} onChange={onCategoryChangeHandler}>
+                        <select id='category' value={values.category} onChange={onCategoryChangeHandler}>
                             {props.allCategories.map(category => 
                                 <option value={category.id} key={category.id}>
                                     {category.name}
