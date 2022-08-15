@@ -9,7 +9,7 @@ export const Filter = (props) => {
     return (
         <>
         <div className={styles.Filters}>
-        <h3>Filters:</h3>
+        <h3>Categories:</h3>
             {props.categoryList.map(category => {
             return (
                 <button key={category.id} onClick={() => onFilterSelectHandler(category.id)} >

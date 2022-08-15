@@ -1,5 +1,7 @@
 import styles from './Tickets.module.css'
 
+import { validator } from '../../services/validator';
+
 import { useState, useContext, useEffect } from "react";
 import { TicketsContext } from '../../contexts/TicketsContext';
 import { Comment } from "../Comments/Comment";
@@ -7,6 +9,7 @@ import { CommentCreate } from "../Comments/CommentCreate";
 import * as ticketService from '../../services/tickets_services'
 
 export const TicketDetails = (props) => {
+    const [errors, setErrors] = useState({});
     const {tickets, setTickets} = useContext(TicketsContext)
     const [values, setValues] = useState({
         id: `${props.id}`,
@@ -106,6 +109,22 @@ export const TicketDetails = (props) => {
         setNewComment(true)
     }
 
+    const validateInputs = (ev) => {
+        let validated = validator(ev)
+        if (validated) {
+          setErrors(state => ({
+            ...state,
+            [ev.target.id]: validated,
+          }))
+        }
+        else {
+          setErrors(state => ({
+            ...state,
+            [ev.target.id]: validated,
+          }))
+        }
+      } 
+
     return (
         <>
             <form className={styles.TicketDetails} onSubmit={onSubmitHandler}>
@@ -113,7 +132,14 @@ export const TicketDetails = (props) => {
                 <section>
                     <div>
                         <label htmlFor="title"  value={values.title} >Title:</label>
-                        <input id='title' type="text"  onChange={changeHandler} defaultValue={props.title}/>
+                        <input 
+                            id='title' 
+                            type="text"  
+                            onChange={changeHandler} 
+                            defaultValue={props.title}
+                            onBlur={validateInputs} 
+                        />
+                        {errors.title && <p>{errors.title}</p>}
                     </div>
                     <div>
                         <label htmlFor="ticket_id" value={values.ticket_id} >Ticket Number:</label>
@@ -131,7 +157,14 @@ export const TicketDetails = (props) => {
                     </div>
                     <div>
                         <label htmlFor="description"  value={values.description} >Decription:</label>
-                        <input id='description' type="text" onChange={changeHandler} defaultValue={props.description}/>
+                        <input 
+                            id='description' 
+                            type="text" 
+                            onChange={changeHandler} 
+                            defaultValue={props.description}
+                            onBlur={validateInputs} 
+                        />
+                        {errors.description && <p>{errors.description}</p>}
                     </div> 
                     <div>
                         <label htmlFor="status"  value={values.status} >Completion:</label>

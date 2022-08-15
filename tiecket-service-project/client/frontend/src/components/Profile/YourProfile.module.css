@@ -123,6 +123,11 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ProfileEditForm form div p {
+    color: red;
 }
 
 .ProfileEditForm form div:nth-child(1) {

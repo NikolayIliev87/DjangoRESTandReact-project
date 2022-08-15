@@ -13,6 +13,7 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = ('full_name', 'first_name', 'last_name', 'phone', 'photo_url', 'user')
+        read_only_fields = ('user',)
 
 
 class UserCreateSerializer(serializers.ModelSerializer):

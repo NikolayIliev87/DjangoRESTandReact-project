@@ -1,5 +1,7 @@
 import styles from './YourProfile.module.css'
 
+import { validator } from '../../services/validator';
+
 import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { ProfileContext } from "../../contexts/ProfileContext";
@@ -7,6 +9,7 @@ import * as profileService from '../../services/profile_service';
 import { useNavigate } from 'react-router-dom'
 
 export const YourProfile = () => {
+    const [errors, setErrors] = useState({});
     const navigate = useNavigate();
     const {auth} = useContext(AuthContext);
     const {yourprofile, setYourProfile} = useContext(ProfileContext);
@@ -43,6 +46,22 @@ export const YourProfile = () => {
         navigate('/')
     }
 
+    const validateInputs = (ev) => {
+        let validated = validator(ev)
+        if (validated) {
+          setErrors(state => ({
+            ...state,
+            [ev.target.id]: validated,
+          }))
+        }
+        else {
+          setErrors(state => ({
+            ...state,
+            [ev.target.id]: validated,
+          }))
+        }
+      } 
+
     return (
         <>
             {editableProfile
@@ -69,19 +88,47 @@ export const YourProfile = () => {
                         <h2>Profile Update Form</h2>
                         <div>
                             <label htmlFor="first_name"  value={values.first_name} >First Name:</label>
-                            <input id='first_name' type="text"  onChange={changeHandler} defaultValue={yourprofile.first_name}/>
+                            <input 
+                                id='first_name' 
+                                type="text"  
+                                onChange={changeHandler} 
+                                defaultValue={yourprofile.first_name}
+                                onBlur={validateInputs}
+                            />
+                            {errors.first_name && <p>{errors.first_name}</p>}
                         </div>
                         <div>
                             <label htmlFor="last_name"  value={values.last_name} >Last Name:</label>
-                            <input id='last_name' type="text"  onChange={changeHandler} defaultValue={yourprofile.last_name}/>
+                            <input 
+                                id='last_name' 
+                                type="text"  
+                                onChange={changeHandler} 
+                                defaultValue={yourprofile.last_name}
+                                onBlur={validateInputs}
+                            />
+                            {errors.last_name && <p>{errors.last_name}</p>}
                         </div>
                         <div>
                             <label htmlFor="phone"  value={values.phone} >Phone:</label>
-                            <input id='phone' type="text"  onChange={changeHandler} defaultValue={yourprofile.phone}/>
+                            <input 
+                                id='phone' 
+                                type="text"  
+                                onChange={changeHandler} 
+                                defaultValue={yourprofile.phone}
+                                onBlur={validateInputs}
+                            />
+                            {errors.phone && <p>{errors.phone}</p>}
                         </div>
                         <div>
                             <label htmlFor="photo_url"  value={values.photo_url} >Photo URL:</label>
-                            <input id='photo_url' type="text"  onChange={changeHandler} defaultValue={yourprofile.photo_url}/>
+                            <input 
+                                id='photo_url' 
+                                type="text"  
+                                onChange={changeHandler} 
+                                defaultValue={yourprofile.photo_url}
+                                onBlur={validateInputs}
+                            />
+                            {errors.photo_url && <p>{errors.photo_url}</p>}
                         </div>
                         <div>
                             <label htmlFor="user" value={values.user} >User ID:</label>

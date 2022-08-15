@@ -1,8 +1,11 @@
 import styles from './Tickets.module.css'
 
+import { validator } from '../../services/validator';
+
 import { useState } from "react";
 
 export const TicketCreate = (props) => {
+    const [errors, setErrors] = useState({});
     const user = JSON.parse(localStorage.getItem('auth'))['id']
     // const [categoryDefauls, setcategoryDefauls] = useState(props.allCategories[0].id)
     const [values, setValues] = useState({
@@ -35,13 +38,36 @@ export const TicketCreate = (props) => {
         props.onCreateClick(ticketData)
     }
 
+    const validateInputs = (ev) => {
+        let validated = validator(ev)
+        if (validated) {
+          setErrors(state => ({
+            ...state,
+            [ev.target.id]: validated,
+          }))
+        }
+        else {
+          setErrors(state => ({
+            ...state,
+            [ev.target.id]: validated,
+          }))
+        }
+      } 
+
     return (
         <form className={styles.TicketNew} onSubmit={onSubmitHandler}>
             <h1>Create New Ticket</h1>
             <section>
                 <div>
                     <label htmlFor="title">Title:</label>
-                    <input id='title' type="text"  onChange={changeHandler} value={values.title}/>
+                    <input 
+                        id='title' 
+                        type="text"  
+                        onChange={changeHandler} 
+                        value={values.title}
+                        onBlur={validateInputs} 
+                    />
+                    {errors.title && <p>{errors.title}</p>}
                 </div>
                 <div>
                     <label htmlFor="category">Category:</label>
@@ -55,7 +81,14 @@ export const TicketCreate = (props) => {
                 </div> 
                 <div>
                     <label htmlFor="description">Decription:</label>
-                    <input id='description' type="text" onChange={changeHandler} value={values.description}/>
+                    <input 
+                        id='description' 
+                        type="text" 
+                        onChange={changeHandler} 
+                        value={values.description}
+                        onBlur={validateInputs} 
+                    />
+                    {errors.description && <p>{errors.description}</p>}
                 </div> 
                 <div>
                     <button type="submit" >Create</button>

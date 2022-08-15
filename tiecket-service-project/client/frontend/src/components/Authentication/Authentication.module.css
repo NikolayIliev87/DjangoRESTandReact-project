@@ -32,6 +32,11 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    flex-wrap: wrap;
+}
+
+.Authentication form div p {
+    color: red;
 }
 
 .Authentication form div:nth-child(1) {

@@ -1,5 +1,9 @@
 import styles from './Authentication.module.css'
 
+import {Link} from 'react-router-dom'
+
+import { validator } from '../../services/validator';
+
 import { useState, useContext } from "react";
 import * as authService from '../../services/auth_service'
 import { useNavigate } from 'react-router-dom'
@@ -7,6 +11,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 
 export const Login = () => {
+    const [errors, setErrors] = useState({});
     const {userLogin} = useContext(AuthContext)
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -37,21 +42,51 @@ export const Login = () => {
         setPassword(ev.target.value)
     };
 
+    const validateInputs = (ev) => {
+      let validated = validator(ev)
+      if (validated) {
+        setErrors(state => ({
+          ...state,
+          [ev.target.id]: validated,
+        }))
+      }
+      else {
+        setErrors(state => ({
+          ...state,
+          [ev.target.id]: validated,
+        }))
+      }
+    } 
+
     return (
         <section className={styles.Authentication}>
           <form onSubmit={loginHandler}>
           <h2>LogIn Form</h2>
           <div>
             <label htmlFor="username" >Email:</label>
-            <input id='username' type="text" onChange={usernameChangeHandler} value={username} />
+            <input 
+              id='username' 
+              type="text" 
+              onChange={usernameChangeHandler} 
+              value={username}
+              onBlur={validateInputs}  
+            />
+            {errors.username && <p>{errors.username}</p>}
           </div>
           <div>
             <label htmlFor="password">Password:</label>
-            <input id='password' type="text" onChange={passwordChangeHandler} value={password} />
+            <input 
+              id='password' 
+              type="text" 
+              onChange={passwordChangeHandler} 
+              value={password}
+              onBlur={validateInputs}  
+            />
+            {errors.password && <p>{errors.password}</p>}
           </div>
           <button type="submit" >Login</button>
         </form>
-        <p>If you don't have account yet please Register!</p>
+        <p>If you don't have account yet please <Link to="/register">Register!</Link></p>
       </section>
     )
 }

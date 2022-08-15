@@ -83,7 +83,9 @@ class ProfileDetailsAndUpdateView(api_generic_views.RetrieveUpdateAPIView):
 
     def get_object(self):
         the_object = super().get_object()
-        if the_object.user != self.request.user:
+        # if self.request.user.is_superuser:
+        #     return the_object
+        if the_object.user != self.request.user and not self.request.user.is_superuser:
             raise exceptions.PermissionDenied
         return the_object
 

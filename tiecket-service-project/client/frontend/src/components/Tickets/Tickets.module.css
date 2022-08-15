@@ -111,7 +111,8 @@
 
 .TicketNew {
     width: 60vw;
-    height: 50vh;
+    min-height: 50vh;
+    max-height: 70vh;
     position: absolute;
     margin-left: 20vw;
     margin-top: 10vh;
@@ -143,6 +144,11 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.TicketNew section div p {
+    color: red;
 }
 
 .TicketNew section div:last-child {
@@ -167,7 +173,7 @@
     background-color: rgb(137, 135, 135);
     border: 1px;
     border-radius: 10px;
-    padding: 0px 15px 2px 15px;
+    padding: 0px 15px 0px 15px;
     color: white;
     margin-bottom: 15px;
     font-size: 20px;
@@ -214,6 +220,11 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.TicketDetails section div p {
+    color: red;
 }
 
 .TicketDetails section div:last-child {
@@ -347,6 +358,10 @@
     background-color: whitesmoke;
     align-items: center;
     justify-content: space-between;
+}
+
+.TicketCommnetCreate p {
+    color: red;
 }
 
 .TicketCommnetCreate h2 {
