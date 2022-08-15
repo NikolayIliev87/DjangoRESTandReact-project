@@ -3,6 +3,7 @@ import styles from './Tickets.module.css'
 import { useState, useContext, useEffect } from "react";
 
 import { Ticket } from "./Ticket";
+import { Pagination } from './Pagination';
 import { TicketDetails } from "./TicketDetails";
 import { TicketCreate } from "./TicketCreate";
 
@@ -20,7 +21,20 @@ export const TicketList = () => {
             .then(categories => {setCategories(categories)})
       },[]);
 
-    const {tickets, setTickets} = useContext(TicketsContext)
+    const {tickets, setTickets} = useContext(TicketsContext);
+
+    // pagination client side
+    const [currentPage, setCurrentPage] = useState(1);
+    const [ticketsPerPage] = useState(7);
+    
+    const indexOfLastTicket = currentPage * ticketsPerPage;
+    const indexOfFirstTicket = indexOfLastTicket - ticketsPerPage;
+    const currentTickets = tickets.slice(indexOfFirstTicket, indexOfLastTicket);
+
+    const paginateHandler = (number) => {
+        setCurrentPage(number)
+    }
+    //   end pagination
 
     const [selectedTicket, setSelectedTicket] = useState(null);
 
@@ -117,7 +131,8 @@ export const TicketList = () => {
                 <div className={styles.TicketsArray}>
                 {tickets.length>0
                 ?
-                tickets.map(ticket => 
+                // tickets replaced with currentTickets
+                currentTickets.map(ticket => 
                     <article className={ticket.status?styles.CompletedTicket:''} key={ticket.id}>
                         <Ticket {...ticket} onDetailsClick={onTicketDetailsHandler} />
                     </article>
@@ -126,6 +141,11 @@ export const TicketList = () => {
                 <p>No Tickets to show!</p>
                 }
                 </div>
+                <Pagination 
+                    ticketsPerPage={ticketsPerPage} 
+                    totalTickets={tickets.length}
+                    paginate={paginateHandler}
+                />
             </div>
         </div>
     );
