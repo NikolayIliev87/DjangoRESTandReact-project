@@ -50,3 +50,56 @@
     color: black;
 }
 
+@media (max-width: 700px) {
+    .Home h1 {
+        font-size: 28px;
+    }
+
+    .Home h2 {
+        font-size: 24px;
+    }
+}
+
+/* Media for responsive css */
+
+@media (max-width: 850px) {
+    .Home h1 {
+        font-size: 30px;
+    }
+
+    .Home h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 500px) {
+    .Home h1 {
+        font-size: 26px;
+    }
+
+    .Home h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 420px) {
+    .Home h1 {
+        font-size: 22px;
+    }
+
+    .Home h2 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 350px) {
+    .Home h1 {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .Home h2 {
+        width: 90%;
+        font-size: 14px;
+    }
+}

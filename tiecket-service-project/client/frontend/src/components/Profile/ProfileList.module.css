@@ -73,3 +73,117 @@
     cursor: pointer;
     background-color: rgb(150, 69, 69);
 }
+
+/* Media for responsive css */
+
+@media (max-width: 1000px) {
+    .ProfileList h1 {
+        font-size: 24px;
+    }
+
+    .ProfileList button {
+        font-size: 16px;
+    }
+
+    .ProfileList h2 span {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 850px) {
+    .ProfileList h1 {
+        font-size: 22px;
+    }
+
+    .ProfileList button {
+        font-size: 14px;
+    }
+
+    .ProfileList h2 span {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 750px) {
+    .ProfileList h1 {
+        font-size: 20px;
+    }
+
+    .ProfileList button {
+        font-size: 12px;
+    }
+
+    .ProfileList h2 span {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 650px) {
+    .ProfileList article {
+        width: 95vw;
+    }
+
+    .ProfileList h1 {
+        width: 95vw;
+    }
+
+    .ProfileList button {
+        font-size: 10px;
+    }
+
+    .ProfileList h2 span {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ProfileList h1 {
+        font-size: 18px;
+    }
+
+    .ProfileList button {
+        font-size: 10px;
+    }
+
+    .ProfileList h2 span {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 550px) {
+    .ProfileList h1 {
+        font-size: 18px;
+    }
+
+    .ProfileList button {
+        font-size: 10px;
+    }
+
+    .ProfileList h2 span {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .ProfileList h1 {
+        font-size: 16px;
+    }
+
+    .ProfileList button {
+        font-size: 10px;
+    }
+
+    .ProfileList h2 span {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    .ProfileList article h2:nth-child(3) {
+        display: none;
+    }
+
+    .ProfileList button {
+        font-size: 8px;
+    }
+}

@@ -46,3 +46,51 @@
     cursor: pointer;
     color: lightgrey;
 }
+
+/* Media for responsive css */
+
+@media (max-width: 700px) {
+    .Navigation {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .Navigation i {
+        display: none;
+    }
+
+    .Navigation {
+        font-size: 10px;
+        font-weight: normal;
+    }
+
+    .Navigation ul:nth-child(2) {
+        gap:20px
+    }
+}
+
+@media (max-width: 300px) {
+    .Navigation i {
+        display: none;
+    }
+
+    .Navigation {
+        font-size: 10px;
+        font-weight: normal;
+    }
+
+    .Navigation a {
+        font-weight: normal;
+    }
+
+    .Navigation ul:nth-child(1) {
+        padding-left: 10px;
+    }
+
+    .Navigation ul:nth-child(2) {
+        gap:10px;
+        padding-right: 10px;
+        padding-left: 30px;
+    }
+}

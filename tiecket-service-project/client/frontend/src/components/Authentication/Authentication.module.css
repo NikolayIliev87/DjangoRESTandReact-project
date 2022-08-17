@@ -67,3 +67,54 @@
     cursor: pointer;
     background-color: #00d394;
 }
+
+/* Media for responsive css */
+
+@media (max-width: 900px) {
+    .Authentication form {
+        width: 45vw;
+    }
+}
+
+@media (max-width: 750px) {
+    .Authentication form {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 650px) {
+    .Authentication form {
+        width: 55vw;
+    }
+}
+
+@media (max-width: 550px) {
+    .Authentication form {
+        width: 65vw;
+        row-gap: 10px;
+    }
+
+    .Authentication form label {
+        font-size: 12px;
+    }
+
+    .Authentication form h2 {
+        font-size: 20px;
+    }
+
+    .Authentication form div p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 450px) {
+    .Authentication form {
+        width: 80vw;
+    }
+}
+
+@media (max-width: 350px) {
+    .Authentication form {
+        width: 90vw;
+    }
+}

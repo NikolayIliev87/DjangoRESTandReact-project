@@ -158,3 +158,171 @@
     cursor: pointer;
     background-color: #00d394;
 }
+
+/* Media for responsive css */
+
+@media (max-width: 1000px) {
+    .YourProfileView h1 {
+        width: 70vw;
+    }
+
+    .YourProfileView article {
+        width: 70vw;
+    }
+
+    .ProfileEditForm form {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 900px) {
+    .YourProfileView h1 {
+        font-size: 28px;
+    }
+
+    .YourProfileView article h2 {
+        font-size: 22px;
+    }
+
+    .ProfileEditForm form {
+        width: 55vw;
+    }
+}
+
+@media (max-width: 800px) {
+    .YourProfileView h1 {
+        width: 80vw;
+    }
+
+    .YourProfileView article {
+        width: 80vw;
+    }
+
+    .ProfileEditForm form {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .YourProfileView h1 {
+        font-size: 24px;
+    }
+
+    .YourProfileView article h2 {
+        font-size: 20px;
+    }
+
+    .ProfileEditForm form {
+        width: 65vw;
+    }
+
+    .ProfileEditForm h2 {
+        font-size: 20px;
+    }
+
+    .ProfileEditForm div {
+        font-size: 14px;
+    }
+
+    .ProfileEditForm div button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .YourProfileView h1 {
+        width: 90vw;
+        font-size: 22px;
+    }
+
+    .YourProfileView button {
+        font-size: 16px;
+    }
+
+    .YourProfileView article h2 {
+        font-size: 18px;
+    }
+
+    .YourProfileView article {
+        width: 90vw;
+    }
+
+    .ProfileEditForm form {
+        width: 75vw;
+    }
+}
+
+@media (max-width: 500px) {
+    .YourProfileView h1 {
+        width: 95vw;
+    }
+
+    .YourProfileView article h2 {
+        font-size: 14px;
+    }
+
+    .YourProfileView article {
+        width: 95vw;
+        height: 40vh;
+    }
+
+    .ProfileEditForm form {
+        width: 80vw;
+    }
+
+    .ProfileEditForm h2 {
+        font-size: 18px;
+    }
+
+    .ProfileEditForm div {
+        font-size: 12px;
+    }
+
+    .ProfileEditForm div button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .YourProfileView h1 {
+        width: 95vw;
+        font-size: 18px;
+    }
+
+    .YourProfileView article h2 {
+        font-size: 12px;
+    }
+
+    .YourProfileView button {
+        font-size: 14px;
+    }
+
+    .YourProfileView article {
+        width: 95vw;
+    }
+
+    .ProfileEditForm form {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 350px) {
+    .YourProfileView article h2 {
+        font-size: 10px;
+    }
+    .YourProfileView button {
+        font-size: 12px;
+    }
+
+    .ProfileEditForm h2 {
+        font-size: 16px;
+    }
+
+    .ProfileEditForm div {
+        font-size: 10px;
+    }
+
+    .ProfileEditForm div button {
+        font-size: 12px;
+    }
+}

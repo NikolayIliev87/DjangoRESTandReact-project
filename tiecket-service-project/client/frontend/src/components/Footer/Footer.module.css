@@ -12,3 +12,11 @@
     padding-top: 1vh;
     padding-bottom: 1vh;
 }
+
+/* Media for responsive css */
+
+@media (max-width: 600px) {
+    .Footer {
+        font-size: 10px;
+    }
+}

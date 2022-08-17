@@ -39,7 +39,7 @@
 }
 
 .Filters button {
-    font-size: 14px;
+    font-size: 12px;
     background-color: rgb(137, 135, 135);
     border: 1px;
     border-radius: 10px;
@@ -106,6 +106,198 @@
     cursor: pointer;
     background-color: #00d394;
 }
+
+/* Media for responsive css */
+
+@media (max-width: 950px) {
+    .TicketsList h1 {
+        font-size: 26px;
+    }
+
+    .CreateNewTicket {
+        font-size: 18px;
+    }
+
+    .Filters button {
+        font-size: 10px;
+    }
+
+    .Filters h3 {
+        font-size: 16px;
+    }
+
+    .TicketsList article h2 {
+        font-size: 20px;
+    }
+    
+    .TicketsList article p {
+        font-size: 15px;
+    }
+    
+    .TicketsList article button {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 850px) {
+    .TicketsList h1 {
+        font-size: 24px;
+    }
+
+    .CreateNewTicket {
+        font-size: 15px;
+    }
+
+    .Filters button {
+        font-size: 11px;
+    }
+
+    .Filters h3 {
+        font-size: 14px;
+    }
+
+    .TicketsList article h2 {
+        font-size: 18px;
+    }
+    
+    .TicketsList article p {
+        font-size: 14px;
+    }
+    
+    .TicketsList article button {
+        font-size: 16px;
+        padding: 0px 10px 0px 10px;
+    }
+}
+
+@media (max-width: 750px) {
+    .TicketsList h1 {
+        font-size: 22px;
+    }
+
+    .CreateNewTicket {
+        font-size: 11px;
+    }
+
+    .Filters h3 {
+        font-size: 12px;
+    }
+
+    .TicketsList article h2 {
+        font-size: 16px;
+    }
+    
+    .TicketsList article p {
+        font-size: 12px;
+    }
+    
+    .TicketsList article button {
+        font-size: 12px;
+        padding: 0px 8px 0px 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .TicketsList h1 {
+        font-size: 20px;
+    }
+
+    .CreateNewTicket {
+        font-size: 10px;
+        padding: 2px 10px 2px 10px;
+    }
+
+    .Filters h3 {
+        font-size: 10px;
+    }
+
+    .Filters button {
+        font-size: 10px;
+    }
+
+    .TicketsList article h2 {
+        font-size: 14px;
+    }
+    
+    .TicketsList article p {
+        font-size: 10px;
+    }
+    
+    .TicketsList article button {
+        font-size: 10px;
+        padding: 0px 8px 0px 8px;
+    }
+}
+
+@media (max-width: 500px) {
+    .TicketsList h1 {
+        font-size: 18px;
+    }
+
+    .TicketsArray {
+        height: 45vh;
+    }
+
+    .CreateNewTicket {
+        font-size: 9px;
+        padding: 1px 0px 0px 0px;
+    }
+
+    .Filters h3 {
+        display: none;
+    }
+
+    .Filters button {
+        font-size: 10px;
+    }
+
+    .TicketsList article h2 {
+        font-size: 11px;
+    }
+    
+    .TicketsList article p {
+        font-size: 10px;
+    }
+    
+    .TicketsList article button {
+        font-size: 8px;
+        padding: 0px 8px 0px 8px;
+    }
+}
+
+@media (max-width: 400px) {
+    .TicketsList h1 {
+        font-size: 18px;
+    }
+
+    .CreateNewTicket {
+        font-size: 10px;
+        padding: 1px 0px 0px 0px;
+    }
+
+    .Filters h3 {
+        display: none;
+    }
+
+    .Filters {
+        flex-wrap: wrap;
+    }
+
+    .TicketsList article h2 {
+        font-size: 9px;
+    }
+    
+    .TicketsList article p {
+        font-size: 9px;
+    }
+    
+    .TicketsList article button {
+        font-size: 7px;
+        padding: 0px;
+    }
+}
+
+
 
 /* Ticket CREATE NEW CSS*/
 
@@ -184,6 +376,71 @@
     background-color: #00d394;
 }
 
+/* Media for responsive css */
+
+@media (max-width: 800px) {
+    .TicketNew h1 {
+        font-size: 24px;
+    }
+
+    .TicketNew section {
+        width: 70%;
+    }
+
+    .TicketNew {
+        width: 70vw;
+        margin-left: 15vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .TicketNew h1 {
+        font-size: 22px;
+    }
+
+    .TicketNew {
+        width: 75vw;
+        margin-left: 13vw;
+    }
+}
+
+@media (max-width: 550px) {
+    .TicketNew h1 {
+        font-size: 20px;
+    }
+
+    .TicketNew section div {
+        font-size: 14px;
+    }
+
+    .TicketNew section div button {
+        font-size: 16px;
+    }
+
+    .TicketNew section {
+        width: 85%;
+    }
+}
+
+@media (max-width: 400px) {
+    .TicketNew h1 {
+        font-size: 16px;
+    }
+
+    .TicketNew section div {
+        font-size: 10px;
+    }
+
+    .TicketNew section div button {
+        font-size: 12px;
+    }
+
+    .TicketNew section {
+        width: 90%;
+    }
+}
+
+
 /* Ticket Details CSS*/
 .TicketDetails {
     width: 60vw;
@@ -255,10 +512,76 @@
     font-size: 20px;
 }
 
+.TicketDetails section div:nth-child(5) {
+    display: inline-block;
+}
+
 .TicketDetails section div button:hover {
     cursor: pointer;
     background-color: #00d394;
 }
+
+@media (max-width: 850px) {
+    .TicketDetails {
+        width: 75vw;
+        margin-left: 15vw;
+    }
+    
+    .TicketDetails h1 {
+        font-size: 24px;
+    }
+
+    .TicketDetails section div {
+        font-size: 14px;
+    }
+
+    .TicketDetails section div button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .TicketDetails {
+        width: 80vw;
+        margin-left: 10vw;
+    }
+    
+    .TicketDetails h1 {
+        font-size: 22px;
+    }
+
+    .TicketDetails section div {
+        font-size: 12px;
+    }
+
+    .TicketDetails section div button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 500px) {
+    .TicketDetails {
+        width: 90vw;
+        margin-left: 5vw;
+    }
+    
+    .TicketDetails h1 {
+        font-size: 20px;
+    }
+
+    .TicketDetails section {
+        width: 85%;
+    }
+
+    .TicketDetails section div {
+        font-size: 10px;
+    }
+
+    .TicketDetails section div button {
+        font-size: 12px;
+    }
+}
+
 
 /* Ticket Comments */
 
@@ -317,7 +640,7 @@
 }
 
 .TicketCommnets article h2 {
-    font-size: 20px;
+    font-size: 18px;
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
@@ -391,6 +714,122 @@
     background-color: #00d394;
 }
 
+/* Media for responsive css */
+
+@media (max-width: 800px) {
+    .TicketCommnetsOverview h2 {
+        font-size: 20px;
+    }
+
+    .TicketCommnetsOverview button {
+        font-size: 16px;
+    }
+
+    .TicketCommnets h2 {
+        font-size: 18px;
+    }
+
+    .TicketCommnets article h2 {
+        font-size: 14px;
+    }
+
+    .TicketCommnetCreate {
+        width: 50vw;
+        margin-left: 25vw;
+    }
+
+    .TicketCommnetCreate h2 {
+        font-size: 18px;
+    }
+
+    .TicketCommnetCreate div {
+        font-size: 14px;
+    }
+
+    .TicketCommnetCreate button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    .TicketCommnetsOverview h2 {
+        font-size: 18px;
+    }
+
+    .TicketCommnetsOverview button {
+        font-size: 13px;
+        width: 120px;
+    }
+
+    .TicketCommnets h2 {
+        font-size: 16px;
+    }
+
+    .TicketCommnets article h2 {
+        font-size: 12px;
+    }
+
+    .TicketCommnetCreate {
+        width: 60vw;
+        margin-left: 20vw;
+    }
+
+    .TicketCommnetCreate h2 {
+        font-size: 16px;
+    }
+
+    .TicketCommnetCreate div {
+        font-size: 12px;
+    }
+
+    .TicketCommnetCreate button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .TicketCommnetsOverview h2 {
+        font-size: 14px;
+    }
+
+    .TicketCommnetsOverview button {
+        font-size: 12px;
+        padding: 0px;
+        width: 100px;
+    }
+
+    .TicketCommnets h2 {
+        font-size: 12px;
+    }
+
+    .TicketCommnets article h2 {
+        font-size: 10px;
+    }
+    .TicketCommnets button {
+        font-size: 12px;
+        width: 100px;
+        padding: 0px 5px 1px 5px;
+    }
+
+    .TicketCommnetCreate {
+        width: 70vw;
+        margin-left: 15vw;
+    }
+
+    .TicketCommnetCreate h2 {
+        font-size: 14px;
+    }
+
+    .TicketCommnetCreate div {
+        font-size: 10px;
+    }
+
+    .TicketCommnetCreate button {
+        font-size: 12px;
+    }
+}
+
+
 /* Tickets Pagination */
 
 .TicketsPagination {
@@ -411,4 +850,18 @@
 .TicketsPagination li button:hover {
     cursor: pointer;
     background-color: #00d394;
+}
+
+/* Media for responsive css */
+
+@media (max-width: 700px) {
+    .TicketsPagination li button {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .TicketsPagination li button {
+        font-size: 10px;
+    }
 }
