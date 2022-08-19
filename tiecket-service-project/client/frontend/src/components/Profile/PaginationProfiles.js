@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './ProfileList.module.css'
+import styles from './ProfileList.module.css';
 
 export const PaginationProfiles = (props) => {
 
@@ -20,11 +20,10 @@ export const PaginationProfiles = (props) => {
             <ul className={styles.ProfilesPagination}>
                 {pageNumbers.map(number => (
                     <li key={number}>
-                        <button type="button" onClick={(e) => onPageClickHandler(e, number)}>{number}</button>
+                        <button className={currentPage===number?"active":"inactive"} type="button" onClick={(e) => onPageClickHandler(e, number)}>{number}</button>
                     </li>
                 ))}
             </ul>
-            <p>Current Page:{currentPage} of {pageNumbers.length===0?"1":pageNumbers.length}</p>
         </div>
     );
 }

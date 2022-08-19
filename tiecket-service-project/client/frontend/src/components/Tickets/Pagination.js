@@ -20,11 +20,10 @@ export const Pagination = (props) => {
             <ul className={styles.TicketsPagination}>
                 {pageNumbers.map(number => (
                     <li key={number}>
-                        <button type="button" onClick={() => onPageClickHandler(number)}>{number}</button>
+                        <button className={currentPage===number?"active":"inactive"} type="button" onClick={() => onPageClickHandler(number)}>{number}</button>
                     </li>
                 ))}
             </ul>
-            <p>Current Page:{currentPage} of {pageNumbers.length}</p>
         </div>
     );
 }
