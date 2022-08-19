@@ -13,7 +13,7 @@ export const HomeUser = () => {
 
     return (
         <div className={styles.Home}>
-            <h1>Welcome {auth.email} to you your Ticket Portal!</h1>
+            <h1>Welcome {auth.email} to your Ticket Portal!</h1>
             <h2>You have {tickets.length} tickets issued out of which {incomplete.length} still not closed</h2>
         </div>
     )
