@@ -68,6 +68,7 @@ class ProfilesListView(api_generic_views.ListAPIView):
         queryset = super().get_queryset()
 
         queryset = queryset.filter(is_deleted=False)
+        queryset = queryset.exclude(user=self.request.user)
 
         return queryset
 

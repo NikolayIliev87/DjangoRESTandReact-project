@@ -35,7 +35,8 @@ class TicketListAndCreateView(api_views.ListCreateAPIView):
     def get_queryset(self):
         queryset = super().get_queryset()
 
-        queryset = queryset.filter(user=self.request.user)
+        if not self.request.user.is_superuser:
+            queryset = queryset.filter(user=self.request.user)
 
         queryset = self.__apply_query_filters(queryset)
 
@@ -51,7 +52,7 @@ class TicketDetailsAndUpdateView(api_views.RetrieveUpdateDestroyAPIView):
 
     def get_object(self):
         the_object = super().get_object()
-        if the_object.user != self.request.user:
+        if the_object.user != self.request.user and not self.request.user.is_superuser:
             raise exceptions.PermissionDenied
         return the_object
 

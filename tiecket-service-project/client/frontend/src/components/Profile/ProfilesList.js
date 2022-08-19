@@ -46,7 +46,7 @@ export const ProfilesList = () => {
 
     return (
             <div className={styles.ProfileList}>
-                <h1>Profiles List</h1>
+                <h1>Active profiles without your own</h1>
                 {currentProfiles.map(profile => 
                     <article key={profile.user}>
                         <Profile {...profile} onDeleteClick={onProfileDeleteHandler} />

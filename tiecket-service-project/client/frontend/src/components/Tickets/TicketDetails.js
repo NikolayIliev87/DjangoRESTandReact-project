@@ -4,11 +4,13 @@ import { validator } from '../../services/validator';
 
 import { useState, useContext, useEffect } from "react";
 import { TicketsContext } from '../../contexts/TicketsContext';
+import { AuthContext } from "../../contexts/AuthContext";
 import { Comment } from "../Comments/Comment";
 import { CommentCreate } from "../Comments/CommentCreate";
 import * as ticketService from '../../services/tickets_services'
 
 export const TicketDetails = (props) => {
+    const {auth} = useContext(AuthContext)
     const [errors, setErrors] = useState({});
     const {tickets, setTickets} = useContext(TicketsContext)
     const [values, setValues] = useState({
@@ -132,7 +134,8 @@ export const TicketDetails = (props) => {
                 <section>
                     <div>
                         <label htmlFor="title"  value={values.title} >Title:</label>
-                        <input 
+                        <input
+                            disabled={auth.id==values.user?false:true} 
                             id='title' 
                             type="text"  
                             onChange={changeHandler} 
@@ -147,7 +150,7 @@ export const TicketDetails = (props) => {
                     </div> 
                     <div>
                         <label htmlFor="category">Category:</label>
-                        <select id='category' value={values.category} onChange={onCategoryChangeHandler}>
+                        <select disabled={auth.id==values.user?false:true} id='category' value={values.category} onChange={onCategoryChangeHandler}>
                             {props.allCategories.map(category => 
                                 <option value={category.id} key={category.id}>
                                     {category.name}
@@ -157,7 +160,8 @@ export const TicketDetails = (props) => {
                     </div>
                     <div>
                         <label htmlFor="description"  value={values.description} >Decription:</label>
-                        <input 
+                        <input
+                            disabled={auth.id==values.user?false:true} 
                             id='description' 
                             type="text" 
                             onChange={changeHandler} 
@@ -168,13 +172,13 @@ export const TicketDetails = (props) => {
                     </div> 
                     <div>
                         <label htmlFor="status"  value={values.status} >Completion:</label>
-                        <input id='status' type="checkbox" onChange={onSwitchHandler} checked={switchStatus}/>
+                        <input disabled={auth.id==values.user?false:true} id='status' type="checkbox" onChange={onSwitchHandler} checked={switchStatus}/>
                     </div>
                     <div>
-                        <button type="submit" name='update'>Save</button>
-                        <button type='submit' name='delete'>Delete</button>
+                        <button hidden={auth.id==values.user?false:true} type="submit" name='update'>Save</button>
+                        <button hidden={auth.id==values.user?false:true} type='submit' name='delete'>Delete</button>
                         <button onClick={props.onCloseClick}>Close</button>
-                    </div>
+                    </div>         
                 </section>
                     
                 {is_comments 
