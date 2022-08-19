@@ -69,7 +69,7 @@
     font-size: 20px;
 }
 
-.ProfileList button:hover {
+.ProfileList article button:hover {
     cursor: pointer;
     background-color: rgb(150, 69, 69);
 }
@@ -81,7 +81,7 @@
         font-size: 24px;
     }
 
-    .ProfileList button {
+    .ProfileList article button {
         font-size: 16px;
     }
 
@@ -95,7 +95,7 @@
         font-size: 22px;
     }
 
-    .ProfileList button {
+    .ProfileList article button {
         font-size: 14px;
     }
 
@@ -109,7 +109,7 @@
         font-size: 20px;
     }
 
-    .ProfileList button {
+    .ProfileList article button {
         font-size: 12px;
     }
 
@@ -127,7 +127,7 @@
         width: 95vw;
     }
 
-    .ProfileList button {
+    .ProfileList article button {
         font-size: 10px;
     }
 
@@ -141,7 +141,7 @@
         font-size: 18px;
     }
 
-    .ProfileList button {
+    .ProfileList article button {
         font-size: 10px;
     }
 
@@ -155,7 +155,7 @@
         font-size: 18px;
     }
 
-    .ProfileList button {
+    .ProfileList article button {
         font-size: 10px;
     }
 
@@ -169,7 +169,7 @@
         font-size: 16px;
     }
 
-    .ProfileList button {
+    .ProfileList article button {
         font-size: 10px;
     }
 
@@ -183,7 +183,7 @@
         display: none;
     }
 
-    .ProfileList button {
+    .ProfileList article button {
         font-size: 8px;
     }
 }
