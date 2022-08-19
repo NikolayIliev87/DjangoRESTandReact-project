@@ -74,6 +74,14 @@
     .Authentication form {
         width: 45vw;
     }
+
+    .Authentication form button {
+        font-size: 18px;
+    }
+
+    .Authentication button {
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 750px) {
@@ -85,6 +93,14 @@
 @media (max-width: 650px) {
     .Authentication form {
         width: 55vw;
+    }
+
+    .Authentication form button {
+        font-size: 16px;
+    }
+
+    .Authentication button {
+        font-size: 16px;
     }
 }
 
@@ -104,6 +120,14 @@
 
     .Authentication form div p {
         font-size: 12px;
+    }
+
+    .Authentication form button {
+        font-size: 14px;
+    }
+
+    .Authentication button {
+        font-size: 14px;
     }
 }
 

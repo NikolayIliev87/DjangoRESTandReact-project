@@ -1,3 +1,5 @@
+import styles from './Authentication.module.css'
+
 import { useNavigate } from 'react-router-dom'
 
 import * as authService from '../../services/auth_service'
@@ -22,10 +24,8 @@ export const Logout = (props) => {
     }
 
     return (
-        <form onSubmit={logoutHandler}>
-        <div>
-          <button type="submit" >Logout</button>
-        </div>
+        <form className={styles.Authentication} onSubmit={logoutHandler}>
+          <h3>Are you sure you want to </h3><button type="submit" >Logout</button>
       </form>
     )
 }
