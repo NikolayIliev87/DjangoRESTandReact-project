@@ -24,7 +24,7 @@ export const Login = () => {
           'username': username,
           "password": password,
         }
-        
+
         authService.login(logInData)
           .then(result => {
             userLogin(result);
@@ -77,7 +77,7 @@ export const Login = () => {
             <label htmlFor="password">Password:</label>
             <input 
               id='password' 
-              type="text" 
+              type="password" 
               onChange={passwordChangeHandler} 
               value={password}
               onBlur={validateInputs}  

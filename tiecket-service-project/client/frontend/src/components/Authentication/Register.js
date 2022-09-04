@@ -98,7 +98,7 @@ export const Register = () => {
             <label htmlFor="password">Password:</label>
             <input 
               id='password' 
-              type="text" 
+              type="password" 
               onChange={passwordChangeHandler} 
               value={password}
               onBlur={validateInputs} 
